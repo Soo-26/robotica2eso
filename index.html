@@ -1,9 +1,12 @@
 ```html
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Top Canciones Olivia Rodrigo</title>
 
 <style>
@@ -21,9 +24,10 @@ body{
 background:
 linear-gradient(
 180deg,
-#b244ff,
-#6e19b8,
-#25003d
+#d79fff,
+#9c45ff,
+#5a1694,
+#220033
 );
 
 color:white;
@@ -32,33 +36,29 @@ overflow-x:hidden;
 
 }
 
-/* ESTRELLAS */
-
 body::before{
 
 content:"";
 
 position:fixed;
 
-width:100%;
+inset:0;
 
-height:100%;
-
-background-image:
+background:
 
 radial-gradient(white 1px,transparent 2px);
 
-background-size:70px 70px;
+background-size:80px 80px;
 
-opacity:.35;
+opacity:.3;
 
 pointer-events:none;
 
-animation:destello 6s infinite alternate;
+animation:brillo 8s infinite alternate;
 
 }
 
-@keyframes destello{
+@keyframes brillo{
 
 from{
 filter:brightness(1);
@@ -72,14 +72,15 @@ filter:brightness(1.6);
 
 header{
 
-padding:50px;
+padding:60px;
 
 text-align:center;
 
-background:
-rgba(255,255,255,.08);
+backdrop-filter:blur(15px);
 
-backdrop-filter:blur(20px);
+background:
+
+rgba(255,255,255,.08);
 
 box-shadow:
 0 0 70px violet;
@@ -88,18 +89,17 @@ box-shadow:
 
 .logo{
 
-font-size:80px;
+font-size:90px;
 
 }
 
-header h1{
+h1{
 
 font-size:3rem;
 
 text-shadow:
-
-0 0 20px white,
-0 0 40px violet;
+0 0 25px white,
+0 0 50px violet;
 
 }
 
@@ -107,9 +107,7 @@ text-shadow:
 
 margin-top:10px;
 
-font-size:18px;
-
-color:#ddd;
+color:#eee;
 
 }
 
@@ -120,11 +118,12 @@ position:sticky;
 top:0;
 
 background:
-rgba(40,0,70,.9);
 
-padding:20px;
+rgba(45,0,80,.9);
 
-z-index:50;
+padding:18px;
+
+z-index:100;
 
 }
 
@@ -144,13 +143,13 @@ flex-wrap:wrap;
 
 nav a{
 
-text-decoration:none;
-
 color:white;
 
-padding:10px 20px;
+text-decoration:none;
 
-border-radius:20px;
+padding:12px 20px;
+
+border-radius:30px;
 
 transition:.4s;
 
@@ -160,17 +159,17 @@ nav a:hover{
 
 background:silver;
 
-color:#5d00a8;
+color:#6611aa;
 
 }
 
 main{
 
-padding:40px;
-
 max-width:1400px;
 
 margin:auto;
+
+padding:40px;
 
 }
 
@@ -191,9 +190,13 @@ color:silver;
 display:grid;
 
 grid-template-columns:
-repeat(auto-fit,minmax(280px,1fr));
 
-gap:30px;
+repeat(
+auto-fit,
+minmax(280px,1fr)
+);
+
+gap:25px;
 
 }
 
@@ -211,7 +214,7 @@ backdrop-filter:blur(20px);
 
 box-shadow:
 
-0 0 30px rgba(255,255,255,.2);
+0 0 30px rgba(255,255,255,.15);
 
 transition:.4s;
 
@@ -220,11 +223,12 @@ transition:.4s;
 .card:hover{
 
 transform:
+
 translateY(-10px);
 
 box-shadow:
 
-0 0 50px violet;
+0 0 60px violet;
 
 }
 
@@ -232,7 +236,7 @@ box-shadow:
 
 width:100%;
 
-height:250px;
+height:320px;
 
 object-fit:cover;
 
@@ -242,43 +246,19 @@ margin-bottom:15px;
 
 }
 
-.icon{
-
-font-size:55px;
-
-text-align:center;
-
-}
-
 .card h3{
 
 text-align:center;
 
-margin:15px;
-
 color:silver;
+
+margin:10px;
 
 }
 
 .card p{
 
 line-height:1.7;
-
-}
-
-.extra{
-
-display:none;
-
-margin-top:15px;
-
-padding:15px;
-
-background:
-
-rgba(255,255,255,.08);
-
-border-radius:15px;
 
 }
 
@@ -296,8 +276,6 @@ border-radius:20px;
 
 cursor:pointer;
 
-font-weight:bold;
-
 background:
 
 linear-gradient(
@@ -308,11 +286,43 @@ white
 
 color:#5b00a0;
 
+font-weight:bold;
+
+}
+
+.extra{
+
+display:none;
+
+margin-top:15px;
+
+padding:15px;
+
+border-radius:15px;
+
+background:
+
+rgba(255,255,255,.08);
+
+}
+
+.fav{
+
+text-align:center;
+
+font-size:1.2rem;
+
+padding:35px;
+
+border-radius:30px;
+
+background:
+
+rgba(255,255,255,.08);
+
 }
 
 footer{
-
-margin-top:80px;
 
 padding:30px;
 
@@ -322,17 +332,14 @@ background:
 
 rgba(255,255,255,.08);
 
+margin-top:60px;
+
 color:silver;
 
 }
 
-.album{
-
-font-size:30px;
-
-}
-
 </style>
+
 </head>
 
 <body>
@@ -340,15 +347,21 @@ font-size:30px;
 <header>
 
 <div class="logo">
+
 🎤💜✨
+
 </div>
 
 <h1>
+
 TOP CANCIONES OLIVIA RODRIGO
+
 </h1>
 
 <p class="sub">
-Mi ranking personal + información sobre Olivia Rodrigo
+
+Mi ranking + álbumes + curiosidades
+
 </p>
 
 </header>
@@ -357,23 +370,11 @@ Mi ranking personal + información sobre Olivia Rodrigo
 
 <ul>
 
-<li>
-<a href="#ranking">
-Top 10
-</a>
-</li>
+<li><a href="#top">Top 10</a></li>
 
-<li>
-<a href="#albums">
-Álbumes
-</a>
-</li>
+<li><a href="#albums">Álbumes</a></li>
 
-<li>
-<a href="#olivia">
-Sobre Olivia
-</a>
-</li>
+<li><a href="#olivia">Olivia</a></li>
 
 </ul>
 
@@ -381,147 +382,103 @@ Sobre Olivia
 
 <main>
 
-<section id="ranking">
+<section id="top">
 
 <h2>
+
 ⭐ MI TOP 10
+
 </h2>
 
 <div class="grid">
 
 <div class="card">
-
-<img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f">
-
-<h3>🩸 1. Vampire</h3>
-
-<p>
-Mi favorita. Tiene una letra intensa y una estética increíble.
-</p>
-
-<button onclick="abrir(this)">
-Ver más
-</button>
-
-<div class="extra">
-
-Pertenece al álbum GUTS y fue uno de los mayores éxitos de Olivia.
-
-</div>
-
+<h3>1 🩸 Vampire</h3>
+<p>Mi favorita absoluta.</p>
+<button onclick="abrir(this)">Ver más</button>
+<div class="extra">Del álbum GUTS. Tiene una estética increíble.</div>
 </div>
 
 <div class="card">
-
-<h3>⚡ 2. Brutal</h3>
-
-<p>
-Canción llena de energía.
-</p>
-
+<h3>2 ⚡ Brutal</h3>
+<p>Muy energética.</p>
 </div>
 
 <div class="card">
-
-<h3>📚 3. Ballad of a Homeschooled Girl</h3>
-
-<p>
-Muy divertida y diferente.
-</p>
-
+<h3>3 📚 Ballad of a Homeschooled Girl</h3>
+<p>Divertida y diferente.</p>
 </div>
 
 <div class="card">
-
-<h3>✨ 4. The Cure</h3>
-
-<p>
-Con una vibra especial.
-</p>
-
+<h3>4 ✨ The Cure</h3>
+<p>Con una vibra especial.</p>
 </div>
 
 <div class="card">
-
-<h3>💜 5. Pretty Isn't Pretty</h3>
-
-<p>
-Una de las letras más bonitas.
-</p>
-
+<h3>5 💜 Pretty Isn't Pretty</h3>
+<p>Una letra muy bonita.</p>
 </div>
 
-<div class="card">
-<h3>😒 6. Jealousy, Jealousy</h3>
-</div>
-
-<div class="card">
-<h3>🚗 7. Deja Vu</h3>
-</div>
-
-<div class="card">
-<h3>💔 8. Traitor</h3>
-</div>
-
-<div class="card">
-<h3>🎼 9. Favourite Crime</h3>
-</div>
-
-<div class="card">
-<h3>☠️ 10. Drop Dead</h3>
-</div>
+<div class="card"><h3>6 😒 Jealousy, Jealousy</h3></div>
+<div class="card"><h3>7 🚗 Deja Vu</h3></div>
+<div class="card"><h3>8 💔 Traitor</h3></div>
+<div class="card"><h3>9 🎼 Favourite Crime</h3></div>
+<div class="card"><h3>10 ☠️ Drop Dead</h3></div>
 
 </div>
 
 </section>
+
 
 <section id="albums">
 
 <h2>
+
 💿 ÁLBUMES
+
 </h2>
 
 <div class="grid">
 
 <div class="card">
 
-<div class="album">
-💜
-</div>
+<img src="https://upload.wikimedia.org/wikipedia/en/b/b2/Olivia_Rodrigo_-_SOUR.png">
 
-<h3>SOUR (2021)</h3>
+<h3>💜 SOUR</h3>
 
 <p>
 
-Primer álbum de Olivia Rodrigo.
-
-Incluye:
-drivers license,
-deja vu,
-traitor,
-brutal,
-jealousy jealousy.
+drivers license • deja vu • brutal • traitor
 
 </p>
 
 </div>
 
+
 <div class="card">
 
-<div class="album">
-⭐
-</div>
+<img src="https://upload.wikimedia.org/wikipedia/en/5/5c/Olivia_Rodrigo_-_Guts.png">
 
-<h3>GUTS (2023)</h3>
+<h3>⭐ GUTS</h3>
 
 <p>
 
-Álbum con un estilo más fuerte.
+vampire • pretty isn't pretty • ballad of a homeschooled girl
 
-Incluye:
-vampire,
-pretty isn't pretty,
-ballad of a homeschooled girl.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7">
+
+<h3>🌙 You Seem Pretty Sad For A Girl So In Love</h3>
+
+<p>
+
+Tu sección especial del álbum nuevo 💜
 
 </p>
 
@@ -531,55 +488,86 @@ ballad of a homeschooled girl.
 
 </section>
 
+
 <section id="olivia">
 
 <h2>
-🌌 SOBRE OLIVIA RODRIGO
+
+🌌 SOBRE OLIVIA
+
 </h2>
 
 <div class="grid">
 
 <div class="card">
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Olivia_Rodrigo_2022.jpg/800px-Olivia_Rodrigo_2022.jpg">
+<img src="images.jpeg">
 
 <h3>
+
 🎤 Olivia Rodrigo
+
 </h3>
 
 <p>
 
-Cantante y compositora estadounidense.
+Cantante y compositora.
 
-Nació el 20 de febrero de 2003.
+Nació el 20 febrero 2003.
 
-Se hizo famosa con drivers license y después lanzó SOUR y GUTS.
+Álbumes:
+SOUR y GUTS.
 
-Su estilo mezcla pop, rock alternativo y letras emocionales.
+Estética:
+morado + estrellas + brillo.
 
 </p>
 
 </div>
+
 
 <div class="card">
 
 <h3>
-🏆 Curiosidades
+
+🏆 DATOS
+
 </h3>
 
 <p>
 
-✨ Ganó varios premios Grammy.
+✨ Premios Grammy
 
-✨ Es actriz y cantante.
+✨ Actriz y cantante
 
-✨ Su color más relacionado por fans suele ser el morado.
-
-✨ Tiene millones de oyentes.
+✨ Millones de oyentes
 
 </p>
 
 </div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<h2>
+
+🌙 MI ERA FAVORITA
+
+</h2>
+
+<div class="fav">
+
+💜 GUTS FOREVER 💜
+
+<br><br>
+
+⭐ Vampire  
+⭐ Pretty Isn't Pretty  
+⭐ Ballad of a Homeschooled Girl
 
 </div>
 
@@ -597,8 +585,7 @@ Sofía Olmo Osuna — 2º ESO
 
 function abrir(b){
 
-let x=
-b.nextElementSibling;
+let x=b.nextElementSibling;
 
 if(x.style.display==="block"){
 
@@ -621,5 +608,6 @@ b.textContent="Ocultar";
 </script>
 
 </body>
+
 </html>
 ```
