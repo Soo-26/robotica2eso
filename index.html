@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,302 +7,446 @@
 <title>Top Canciones Olivia Rodrigo</title>
 
 <style>
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: Arial, Helvetica, sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Trebuchet MS',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-    background: linear-gradient(135deg,#2b0a4a,#4b0082,#6a0dad);
-    color:white;
-    min-height:100vh;
+background:
+radial-gradient(circle at top,#b84cff 0%,#6513aa 35%,#240038 100%);
+color:white;
+overflow-x:hidden;
+}
+
+/* ESTRELLAS */
+
+body::before{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background:
+radial-gradient(white 1px,transparent 2px),
+radial-gradient(silver 1px,transparent 2px);
+background-size:80px 80px;
+opacity:.3;
+animation:brillo 8s infinite alternate;
+pointer-events:none;
+}
+
+@keyframes brillo{
+from{
+filter:brightness(1);
+}
+to{
+filter:brightness(1.4);
+}
 }
 
 header{
-    text-align:center;
-    padding:30px;
-    background:rgba(0,0,0,0.25);
-    border-bottom:2px solid silver;
+text-align:center;
+padding:45px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(15px);
+border-bottom:2px solid silver;
+box-shadow:0 0 50px #e0a8ff;
 }
 
 .logo{
-    font-size:50px;
+font-size:70px;
 }
 
 header h1{
-    color:silver;
-    margin-top:10px;
-    text-shadow:0 0 10px white;
+font-size:3rem;
+color:white;
+text-shadow:
+0 0 10px white,
+0 0 30px violet,
+0 0 60px violet;
+}
+
+.sub{
+margin-top:10px;
+color:#ddd;
 }
 
 nav{
-    background:rgba(255,255,255,0.1);
-    padding:15px;
+padding:20px;
+position:sticky;
+top:0;
+z-index:50;
+background:rgba(30,0,50,.8);
+backdrop-filter:blur(20px);
 }
 
 nav ul{
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    list-style:none;
+display:flex;
+justify-content:center;
+gap:30px;
+list-style:none;
+flex-wrap:wrap;
 }
 
 nav a{
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-    transition:0.3s;
+text-decoration:none;
+color:white;
+font-weight:bold;
+padding:10px 18px;
+border-radius:20px;
+transition:.4s;
 }
 
 nav a:hover{
-    color:silver;
+background:silver;
+color:#551188;
+box-shadow:0 0 20px silver;
 }
 
 main{
-    max-width:1200px;
-    margin:auto;
-    padding:30px;
+padding:40px;
+max-width:1300px;
+margin:auto;
 }
 
-.seccion{
-    margin-bottom:50px;
+h2{
+text-align:center;
+font-size:2rem;
+margin:50px;
+color:silver;
+text-shadow:0 0 20px white;
 }
 
-.seccion h2{
-    text-align:center;
-    margin-bottom:25px;
-    color:silver;
+.grid{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
 }
 
-.tarjetas{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+.card{
+background:
+linear-gradient(
+180deg,
+rgba(255,255,255,.18),
+rgba(255,255,255,.05)
+);
+
+padding:25px;
+border-radius:30px;
+
+backdrop-filter:blur(18px);
+
+box-shadow:
+0 0 30px rgba(255,255,255,.2);
+
+transition:.4s;
 }
 
-.tarjeta{
-    background:rgba(255,255,255,0.12);
-    border:1px solid silver;
-    border-radius:20px;
-    padding:20px;
-    text-align:center;
-    backdrop-filter:blur(5px);
-    transition:0.3s;
+.card:hover{
+transform:
+translateY(-10px)
+scale(1.03);
+
+box-shadow:
+0 0 60px violet,
+0 0 30px silver;
 }
 
-.tarjeta:hover{
-    transform:translateY(-8px);
-    box-shadow:0 0 20px silver;
+.icon{
+font-size:65px;
+text-align:center;
 }
 
-.icono{
-    font-size:50px;
-    margin-bottom:10px;
+.card h3{
+text-align:center;
+margin:15px;
+color:silver;
 }
 
-.tarjeta h3{
-    color:silver;
-    margin-bottom:10px;
+.card p{
+line-height:1.6;
 }
 
-.tarjeta p{
-    margin-bottom:15px;
-    line-height:1.4;
+.extra{
+display:none;
+margin-top:15px;
+
+background:
+rgba(255,255,255,.1);
+
+padding:15px;
+
+border-radius:15px;
 }
 
 button{
-    background:silver;
-    color:#4b0082;
-    border:none;
-    padding:10px 15px;
-    border-radius:10px;
-    cursor:pointer;
-    font-weight:bold;
+margin-top:20px;
+
+width:100%;
+
+padding:12px;
+
+border:none;
+
+border-radius:20px;
+
+background:
+linear-gradient(
+90deg,
+silver,
+white
+);
+
+font-weight:bold;
+
+cursor:pointer;
+
+color:#6b00a7;
+
+transition:.3s;
 }
 
 button:hover{
-    background:white;
+transform:scale(1.04);
 }
 
 footer{
-    text-align:center;
-    padding:20px;
-    background:rgba(0,0,0,0.3);
-    border-top:2px solid silver;
-    margin-top:30px;
+margin-top:70px;
+
+padding:30px;
+
+text-align:center;
+
+background:
+rgba(255,255,255,.08);
+
+color:silver;
 }
 
-.estrellas{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    pointer-events:none;
-    overflow:hidden;
-}
-
-.estrella{
-    position:absolute;
-    color:white;
-    opacity:0.7;
-    animation:brillar 3s infinite alternate;
-}
-
-@keyframes brillar{
-    from{opacity:0.2;}
-    to{opacity:1;}
-}
 </style>
 </head>
+
 <body>
 
-<div class="estrellas">
-<span class="estrella" style="top:5%;left:10%;">✦</span>
-<span class="estrella" style="top:15%;left:80%;">✧</span>
-<span class="estrella" style="top:25%;left:40%;">✦</span>
-<span class="estrella" style="top:50%;left:90%;">✧</span>
-<span class="estrella" style="top:70%;left:15%;">✦</span>
-<span class="estrella" style="top:85%;left:75%;">✧</span>
+<header>
+
+<div class="logo">
+🎤✨💜
 </div>
 
-<header>
-<div class="logo">🎤💜</div>
-<h1>Top Canciones Olivia Rodrigo</h1>
+<h1>
+TOP CANCIONES OLIVIA RODRIGO
+</h1>
+
+<p class="sub">
+Mi ranking personal ⭐
+</p>
+
 </header>
 
 <nav>
+
 <ul>
-<li><a href="#top5">Top 1-5</a></li>
-<li><a href="#top10">Top 6-10</a></li>
-<li><a href="#sobre">Sobre Olivia</a></li>
+
+<li>
+<a href="#top1">
+Top 1–5
+</a>
+</li>
+
+<li>
+<a href="#top2">
+Top 6–10
+</a>
+</li>
+
+<li>
+<a href="#sobre">
+Sobre Olivia
+</a>
+</li>
+
 </ul>
+
 </nav>
 
 <main>
 
-<section class="seccion" id="top5">
-<h2>⭐ Top 1 - 5</h2>
+<section id="top1">
 
-<div class="tarjetas">
+<h2>
+⭐ TOP 1–5
+</h2>
 
-<div class="tarjeta">
-<div class="icono">🩸</div>
+<div class="grid">
+
+<div class="card">
+<div class="icon">🩸</div>
 <h3>1. Vampire</h3>
-<p>Una de las canciones más populares de Olivia Rodrigo, con una letra intensa y emotiva.</p>
-<button>Ver más</button>
+<p>Potente, dramática y una de mis favoritas.</p>
+
+<button onclick="mostrar(this)">
+Ver más
+</button>
+
+<div class="extra">
+Una canción intensa que mezcla emociones y un estilo muy Olivia Rodrigo.
 </div>
 
-<div class="tarjeta">
-<div class="icono">⚡</div>
+</div>
+
+<div class="card">
+<div class="icon">⚡</div>
 <h3>2. Brutal</h3>
-<p>Una canción enérgica que expresa las inseguridades y emociones de la adolescencia.</p>
-<button>Ver más</button>
+<p>Caótica y con mucha energía.</p>
+
+<button onclick="mostrar(this)">
+Ver más
+</button>
+
+<div class="extra">
+Habla de crecer y sentirse perdido.
 </div>
 
-<div class="tarjeta">
-<div class="icono">📚</div>
+</div>
+
+<div class="card">
+<div class="icon">📚</div>
 <h3>3. Ballad of a Homeschooled Girl</h3>
-<p>Habla de momentos incómodos y experiencias sociales con un toque divertido.</p>
-<button>Ver más</button>
+
+<p>Divertida y diferente.</p>
+
+<button onclick="mostrar(this)">
+Ver más
+</button>
+
+<div class="extra">
+Cuenta momentos incómodos y recuerdos.
 </div>
 
-<div class="tarjeta">
-<div class="icono">✨</div>
+</div>
+
+<div class="card">
+<div class="icon">✨</div>
+
 <h3>4. The Cure</h3>
-<p>Una canción que transmite esperanza y emociones profundas.</p>
-<button>Ver más</button>
+
+<p>Brilla muchísimo.</p>
+
+<button onclick="mostrar(this)">
+Ver más
+</button>
+
+<div class="extra">
+Una canción que transmite emociones suaves.
 </div>
 
-<div class="tarjeta">
-<div class="icono">💜</div>
+</div>
+
+<div class="card">
+
+<div class="icon">💜</div>
+
 <h3>5. Pretty Isn't Pretty</h3>
-<p>Reflexiona sobre la belleza, la autoestima y la presión social.</p>
-<button>Ver más</button>
+
+<p>Reflexiva y preciosa.</p>
+
+<button onclick="mostrar(this)">
+Ver más
+</button>
+
+<div class="extra">
+Habla sobre la presión estética.
 </div>
 
 </div>
+
+</div>
+
 </section>
 
-<section class="seccion" id="top10">
-<h2>⭐ Top 6 - 10</h2>
+<section id="top2">
 
-<div class="tarjetas">
+<h2>
+🌙 TOP 6–10
+</h2>
 
-<div class="tarjeta">
-<div class="icono">😒</div>
-<h3>6. Jealousy, Jealousy</h3>
-<p>Una crítica a las comparaciones constantes y las redes sociales.</p>
-<button>Ver más</button>
-</div>
+<div class="grid">
 
-<div class="tarjeta">
-<div class="icono">🚗</div>
-<h3>7. Deja Vu</h3>
-<p>Cuenta la sensación de ver cómo alguien repite experiencias con otra persona.</p>
-<button>Ver más</button>
-</div>
+<div class="card"><div class="icon">😒</div><h3>6. Jealousy, Jealousy</h3></div>
 
-<div class="tarjeta">
-<div class="icono">💔</div>
-<h3>8. Traitor</h3>
-<p>Una balada emocional sobre la traición y el desamor.</p>
-<button>Ver más</button>
-</div>
+<div class="card"><div class="icon">🚗</div><h3>7. Deja Vu</h3></div>
 
-<div class="tarjeta">
-<div class="icono">🎼</div>
-<h3>9. Favourite Crime</h3>
-<p>Una canción suave que describe una relación intensa y dolorosa.</p>
-<button>Ver más</button>
-</div>
+<div class="card"><div class="icon">💔</div><h3>8. Traitor</h3></div>
 
-<div class="tarjeta">
-<div class="icono">☠️</div>
-<h3>10. Drop Dead</h3>
-<p>Una canción con energía y actitud que destaca por su estilo único.</p>
-<button>Ver más</button>
-</div>
+<div class="card"><div class="icon">🎼</div><h3>9. Favourite Crime</h3></div>
+
+<div class="card"><div class="icon">☠️</div><h3>10. Drop Dead</h3></div>
 
 </div>
+
 </section>
 
-<section class="seccion" id="sobre">
-<h2>🌟 Sobre Olivia Rodrigo</h2>
+<section id="sobre">
 
-<div class="tarjetas">
+<h2>
+🎤 SOBRE OLIVIA
+</h2>
 
-<div class="tarjeta">
-<div class="icono">🎤</div>
-<h3>Cantante</h3>
-<p>Olivia Rodrigo es una cantante y compositora estadounidense conocida por sus letras sinceras y emocionales.</p>
-<button>Ver más</button>
+<div class="card">
+
+<div class="icon">
+🌌
 </div>
 
-<div class="tarjeta">
-<div class="icono">🏆</div>
-<h3>Premios</h3>
-<p>Ha ganado numerosos premios internacionales gracias al éxito de sus álbumes.</p>
-<button>Ver más</button>
-</div>
+<p>
 
-<div class="tarjeta">
-<div class="icono">💿</div>
-<h3>Álbumes</h3>
-<p>SOUR y GUTS son dos de sus álbumes más populares entre los fans.</p>
-<button>Ver más</button>
-</div>
+Olivia Rodrigo destaca por canciones con letras emocionales, estética morada y un estilo único.
+
+</p>
 
 </div>
+
 </section>
 
 </main>
 
 <footer>
+
 Sofía Olmo Osuna — 2º ESO
+
 </footer>
+
+<script>
+
+function mostrar(boton){
+
+let info=
+boton.nextElementSibling;
+
+if(info.style.display==="block"){
+
+info.style.display="none";
+
+boton.textContent="Ver más";
+
+}else{
+
+info.style.display="block";
+
+boton.textContent="Ocultar";
+
+}
+
+}
+
+</script>
 
 </body>
 </html>
+```
