@@ -24,10 +24,10 @@ body{
 background:
 linear-gradient(
 180deg,
-#d79fff,
-#9c45ff,
-#5a1694,
-#220033
+#d8b0ff,
+#a145ff,
+#6b1fc0,
+#240033
 );
 
 color:white;
@@ -45,16 +45,15 @@ position:fixed;
 inset:0;
 
 background:
-
 radial-gradient(white 1px,transparent 2px);
 
 background-size:80px 80px;
 
-opacity:.3;
+opacity:.35;
 
 pointer-events:none;
 
-animation:brillo 8s infinite alternate;
+animation:brillo 7s infinite alternate;
 
 }
 
@@ -76,14 +75,13 @@ padding:60px;
 
 text-align:center;
 
-backdrop-filter:blur(15px);
-
 background:
-
 rgba(255,255,255,.08);
 
+backdrop-filter:blur(15px);
+
 box-shadow:
-0 0 70px violet;
+0 0 60px violet;
 
 }
 
@@ -98,7 +96,7 @@ h1{
 font-size:3rem;
 
 text-shadow:
-0 0 25px white,
+0 0 20px white,
 0 0 50px violet;
 
 }
@@ -117,13 +115,10 @@ position:sticky;
 
 top:0;
 
+padding:20px;
+
 background:
-
-rgba(45,0,80,.9);
-
-padding:18px;
-
-z-index:100;
+rgba(50,0,80,.9);
 
 }
 
@@ -147,11 +142,9 @@ color:white;
 
 text-decoration:none;
 
-padding:12px 20px;
+padding:10px 18px;
 
 border-radius:30px;
-
-transition:.4s;
 
 }
 
@@ -177,9 +170,7 @@ h2{
 
 text-align:center;
 
-margin:60px;
-
-font-size:2rem;
+margin:50px;
 
 color:silver;
 
@@ -190,11 +181,7 @@ color:silver;
 display:grid;
 
 grid-template-columns:
-
-repeat(
-auto-fit,
-minmax(280px,1fr)
-);
+repeat(auto-fit,minmax(270px,1fr));
 
 gap:25px;
 
@@ -212,10 +199,6 @@ border-radius:30px;
 
 backdrop-filter:blur(20px);
 
-box-shadow:
-
-0 0 30px rgba(255,255,255,.15);
-
 transition:.4s;
 
 }
@@ -223,12 +206,10 @@ transition:.4s;
 .card:hover{
 
 transform:
-
-translateY(-10px);
+translateY(-8px);
 
 box-shadow:
-
-0 0 60px violet;
+0 0 50px violet;
 
 }
 
@@ -236,7 +217,7 @@ box-shadow:
 
 width:100%;
 
-height:320px;
+height:330px;
 
 object-fit:cover;
 
@@ -252,23 +233,17 @@ text-align:center;
 
 color:silver;
 
-margin:10px;
-
-}
-
-.card p{
-
-line-height:1.7;
+margin-bottom:15px;
 
 }
 
 button{
 
-margin-top:15px;
-
 width:100%;
 
 padding:12px;
+
+margin-top:15px;
 
 border:none;
 
@@ -277,14 +252,13 @@ border-radius:20px;
 cursor:pointer;
 
 background:
-
 linear-gradient(
 90deg,
 silver,
 white
 );
 
-color:#5b00a0;
+color:#6c12af;
 
 font-weight:bold;
 
@@ -301,23 +275,6 @@ padding:15px;
 border-radius:15px;
 
 background:
-
-rgba(255,255,255,.08);
-
-}
-
-.fav{
-
-text-align:center;
-
-font-size:1.2rem;
-
-padding:35px;
-
-border-radius:30px;
-
-background:
-
 rgba(255,255,255,.08);
 
 }
@@ -329,10 +286,9 @@ padding:30px;
 text-align:center;
 
 background:
-
 rgba(255,255,255,.08);
 
-margin-top:60px;
+margin-top:50px;
 
 color:silver;
 
@@ -347,21 +303,15 @@ color:silver;
 <header>
 
 <div class="logo">
-
 🎤💜✨
-
 </div>
 
 <h1>
-
 TOP CANCIONES OLIVIA RODRIGO
-
 </h1>
 
 <p class="sub">
-
-Mi ranking + álbumes + curiosidades
-
+Mi ranking personal
 </p>
 
 </header>
@@ -371,71 +321,54 @@ Mi ranking + álbumes + curiosidades
 <ul>
 
 <li><a href="#top">Top 10</a></li>
-
 <li><a href="#albums">Álbumes</a></li>
-
 <li><a href="#olivia">Olivia</a></li>
 
 </ul>
 
 </nav>
 
+
 <main>
 
 <section id="top">
 
 <h2>
-
 ⭐ MI TOP 10
-
 </h2>
 
 <div class="grid">
 
-<div class="card">
-<h3>1 🩸 Vampire</h3>
-<p>Mi favorita absoluta.</p>
-<button onclick="abrir(this)">Ver más</button>
-<div class="extra">Del álbum GUTS. Tiene una estética increíble.</div>
-</div>
+<div class="card"><h3>1 🩸 Vampire</h3><button onclick="abrir(this)">Ver más</button><div class="extra">Mi canción favorita.</div></div>
 
-<div class="card">
-<h3>2 ⚡ Brutal</h3>
-<p>Muy energética.</p>
-</div>
+<div class="card"><h3>2 ⚡ Brutal</h3><button onclick="abrir(this)">Ver más</button><div class="extra">Del álbum SOUR.</div></div>
 
-<div class="card">
-<h3>3 📚 Ballad of a Homeschooled Girl</h3>
-<p>Divertida y diferente.</p>
-</div>
+<div class="card"><h3>3 📚 Ballad of a Homeschooled Girl</h3><button onclick="abrir(this)">Ver más</button><div class="extra">Muy divertida.</div></div>
 
-<div class="card">
-<h3>4 ✨ The Cure</h3>
-<p>Con una vibra especial.</p>
-</div>
+<div class="card"><h3>4 ✨ The Cure</h3><button onclick="abrir(this)">Ver más</button><div class="extra">Una de tus favoritas.</div></div>
 
-<div class="card">
-<h3>5 💜 Pretty Isn't Pretty</h3>
-<p>Una letra muy bonita.</p>
-</div>
+<div class="card"><h3>5 💜 Pretty Isn't Pretty</h3><button onclick="abrir(this)">Ver más</button><div class="extra">Muy bonita.</div></div>
 
-<div class="card"><h3>6 😒 Jealousy, Jealousy</h3></div>
-<div class="card"><h3>7 🚗 Deja Vu</h3></div>
-<div class="card"><h3>8 💔 Traitor</h3></div>
-<div class="card"><h3>9 🎼 Favourite Crime</h3></div>
-<div class="card"><h3>10 ☠️ Drop Dead</h3></div>
+<div class="card"><h3>6 😒 Jealousy, Jealousy</h3><button onclick="abrir(this)">Ver más</button><div class="extra">Muy icónica.</div></div>
+
+<div class="card"><h3>7 🚗 Deja Vu</h3><button onclick="abrir(this)">Ver más</button><div class="extra">Muy conocida.</div></div>
+
+<div class="card"><h3>8 💔 Traitor</h3><button onclick="abrir(this)">Ver más</button><div class="extra">Emocional.</div></div>
+
+<div class="card"><h3>9 🎼 Favourite Crime</h3><button onclick="abrir(this)">Ver más</button><div class="extra">Una favorita.</div></div>
+
+<div class="card"><h3>10 ☠️ Drop Dead</h3><button onclick="abrir(this)">Ver más</button><div class="extra">Para cerrar el top.</div></div>
 
 </div>
 
 </section>
 
 
+
 <section id="albums">
 
 <h2>
-
 💿 ÁLBUMES
-
 </h2>
 
 <div class="grid">
@@ -448,7 +381,7 @@ Mi ranking + álbumes + curiosidades
 
 <p>
 
-drivers license • deja vu • brutal • traitor
+drivers license • deja vu • brutal • traitor • favourite crime
 
 </p>
 
@@ -474,11 +407,13 @@ vampire • pretty isn't pretty • ballad of a homeschooled girl
 
 <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7">
 
-<h3>🌙 You Seem Pretty Sad For A Girl So In Love</h3>
+<h3>
+🌙 You Seem Pretty Sad For A Girl So In Love
+</h3>
 
 <p>
 
-Tu sección especial del álbum nuevo 💜
+Tu era especial morada ✨
 
 </p>
 
@@ -489,12 +424,11 @@ Tu sección especial del álbum nuevo 💜
 </section>
 
 
+
 <section id="olivia">
 
 <h2>
-
-🌌 SOBRE OLIVIA
-
+🎤 SOBRE OLIVIA
 </h2>
 
 <div class="grid">
@@ -504,22 +438,18 @@ Tu sección especial del álbum nuevo 💜
 <img src="images.jpeg">
 
 <h3>
-
-🎤 Olivia Rodrigo
-
+Olivia Rodrigo
 </h3>
 
 <p>
 
 Cantante y compositora.
 
-Nació el 20 febrero 2003.
-
 Álbumes:
 SOUR y GUTS.
 
-Estética:
-morado + estrellas + brillo.
+Estilo:
+morado, estrellas y pop.
 
 </p>
 
@@ -529,16 +459,14 @@ morado + estrellas + brillo.
 <div class="card">
 
 <h3>
-
-🏆 DATOS
-
+🏆 CURIOSIDADES
 </h3>
 
 <p>
 
 ✨ Premios Grammy
 
-✨ Actriz y cantante
+✨ Actriz
 
 ✨ Millones de oyentes
 
@@ -550,36 +478,15 @@ morado + estrellas + brillo.
 
 </section>
 
-
-<section>
-
-<h2>
-
-🌙 MI ERA FAVORITA
-
-</h2>
-
-<div class="fav">
-
-💜 GUTS FOREVER 💜
-
-<br><br>
-
-⭐ Vampire  
-⭐ Pretty Isn't Pretty  
-⭐ Ballad of a Homeschooled Girl
-
-</div>
-
-</section>
-
 </main>
+
 
 <footer>
 
 Sofía Olmo Osuna — 2º ESO
 
 </footer>
+
 
 <script>
 
