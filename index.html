@@ -20,278 +20,160 @@ scroll-behavior:smooth;
 }
 
 body{
-
-background:
-linear-gradient(
-180deg,
-#d8b0ff,
-#a145ff,
-#6b1fc0,
-#240033
-);
-
+background:linear-gradient(180deg,#d8b0ff,#a145ff,#6b1fc0,#240033);
 color:white;
-
 overflow-x:hidden;
-
 }
 
 body::before{
-
 content:"";
-
 position:fixed;
-
 inset:0;
-
 background:
 radial-gradient(white 1px,transparent 2px);
-
 background-size:80px 80px;
-
 opacity:.35;
-
 pointer-events:none;
-
-animation:brillo 7s infinite alternate;
-
+animation:brillo 8s infinite alternate;
 }
 
 @keyframes brillo{
-
-from{
-filter:brightness(1);
-}
-
-to{
-filter:brightness(1.6);
-}
-
+from{filter:brightness(1);}
+to{filter:brightness(1.6);}
 }
 
 header{
-
 padding:60px;
-
 text-align:center;
-
-background:
-rgba(255,255,255,.08);
-
+background:rgba(255,255,255,.08);
 backdrop-filter:blur(15px);
-
-box-shadow:
-0 0 60px violet;
-
+box-shadow:0 0 60px violet;
 }
 
 .logo{
-
 font-size:90px;
-
 }
 
 h1{
-
 font-size:3rem;
-
-text-shadow:
-0 0 20px white,
-0 0 50px violet;
-
+text-shadow:0 0 20px white,0 0 50px violet;
 }
 
 .sub{
-
 margin-top:10px;
-
 color:#eee;
-
 }
 
 nav{
-
 position:sticky;
-
 top:0;
-
 padding:20px;
-
-background:
-rgba(50,0,80,.9);
-
+background:rgba(50,0,80,.9);
+z-index:1000;
 }
 
 nav ul{
-
 display:flex;
-
 justify-content:center;
-
 gap:20px;
-
 list-style:none;
-
 flex-wrap:wrap;
-
 }
 
 nav a{
-
 color:white;
-
 text-decoration:none;
-
 padding:10px 18px;
-
 border-radius:30px;
-
+transition:.3s;
 }
 
 nav a:hover{
-
 background:silver;
-
 color:#6611aa;
-
 }
 
 main{
-
 max-width:1400px;
-
 margin:auto;
-
 padding:40px;
-
 }
 
 h2{
-
 text-align:center;
-
 margin:50px;
-
 color:silver;
-
+font-size:2rem;
 }
 
 .grid{
-
 display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(270px,1fr));
-
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:25px;
-
 }
 
 .card{
-
-background:
-
-rgba(255,255,255,.12);
-
+background:rgba(255,255,255,.12);
 padding:25px;
-
 border-radius:30px;
-
 backdrop-filter:blur(20px);
-
 transition:.4s;
-
 }
 
 .card:hover{
-
-transform:
-translateY(-8px);
-
-box-shadow:
-0 0 50px violet;
-
+transform:translateY(-8px);
+box-shadow:0 0 50px violet;
 }
 
 .card img{
-
 width:100%;
-
 height:330px;
-
 object-fit:cover;
-
 border-radius:20px;
-
 margin-bottom:15px;
-
 }
 
 .card h3{
-
 text-align:center;
-
 color:silver;
-
 margin-bottom:15px;
-
 }
 
 button{
-
 width:100%;
-
 padding:12px;
-
 margin-top:15px;
-
 border:none;
-
 border-radius:20px;
-
 cursor:pointer;
-
-background:
-linear-gradient(
-90deg,
-silver,
-white
-);
-
-color:#6c12af;
-
 font-weight:bold;
-
+background:linear-gradient(90deg,silver,white);
+color:#6c12af;
 }
 
 .extra{
-
 display:none;
-
 margin-top:15px;
-
 padding:15px;
-
 border-radius:15px;
+background:rgba(255,255,255,.08);
+}
 
-background:
-rgba(255,255,255,.08);
+.pagina{
+display:none;
+padding-top:20px;
+}
 
+.pagina:target{
+display:block;
 }
 
 footer{
-
 padding:30px;
-
 text-align:center;
-
-background:
-rgba(255,255,255,.08);
-
+background:rgba(255,255,255,.08);
 margin-top:50px;
-
 color:silver;
-
 }
 
 </style>
@@ -302,13 +184,9 @@ color:silver;
 
 <header>
 
-<div class="logo">
-🎤💜✨
-</div>
+<div class="logo">🎤💜✨</div>
 
-<h1>
-TOP CANCIONES OLIVIA RODRIGO
-</h1>
+<h1>TOP CANCIONES OLIVIA RODRIGO</h1>
 
 <p class="sub">
 Mi ranking personal
@@ -320,201 +198,233 @@ Mi ranking personal
 
 <ul>
 
-<li><a href="#top">Top 10</a></li>
-<li><a href="#albums">Álbumes</a></li>
+<li><a href="#inicio">Inicio</a></li>
+<li><a href="#sour">SOUR</a></li>
+<li><a href="#guts">GUTS</a></li>
+<li><a href="#sad">You Seem Pretty Sad...</a></li>
 <li><a href="#olivia">Olivia</a></li>
 
 </ul>
 
 </nav>
+```html
+<section id="inicio">
 
-
-<main>
-
-<section id="top">
-
-<h2>
-⭐ MI TOP 10
-</h2>
+<h2>⭐ MI TOP 10 DE CANCIONES ⭐</h2>
 
 <div class="grid">
 
-<div class="card"><h3>1 🩸 Vampire</h3><button onclick="abrir(this)">Ver más</button><div class="extra">Mi canción favorita.</div></div>
+<div class="card">
+<h3>1 🩸 Vampire</h3>
+<button onclick="abrir(this)">Ver más</button>
+<div class="extra">
+Mi canción favorita de Olivia Rodrigo. Forma parte del álbum GUTS y fue un éxito mundial.
+</div>
+</div>
 
-<div class="card"><h3>2 ⚡ Brutal</h3><button onclick="abrir(this)">Ver más</button><div class="extra">Del álbum SOUR.</div></div>
+<div class="card">
+<h3>2 ⚡ Brutal</h3>
+<button onclick="abrir(this)">Ver más</button>
+<div class="extra">
+Una canción llena de energía del álbum SOUR.
+</div>
+</div>
 
-<div class="card"><h3>3 📚 Ballad of a Homeschooled Girl</h3><button onclick="abrir(this)">Ver más</button><div class="extra">Muy divertida.</div></div>
+<div class="card">
+<h3>3 📚 Ballad of a Homeschooled Girl</h3>
+<button onclick="abrir(this)">Ver más</button>
+<div class="extra">
+Una canción divertida y muy popular del álbum GUTS.
+</div>
+</div>
 
-<div class="card"><h3>4 ✨ The Cure</h3><button onclick="abrir(this)">Ver más</button><div class="extra">Una de tus favoritas.</div></div>
+<div class="card">
+<h3>4 ✨ The Cure</h3>
+<button onclick="abrir(this)">Ver más</button>
+<div class="extra">
+Una de mis canciones favoritas por su estilo y letra.
+</div>
+</div>
 
-<div class="card"><h3>5 💜 Pretty Isn't Pretty</h3><button onclick="abrir(this)">Ver más</button><div class="extra">Muy bonita.</div></div>
+<div class="card">
+<h3>5 💜 Pretty Isn't Pretty</h3>
+<button onclick="abrir(this)">Ver más</button>
+<div class="extra">
+Habla sobre la autoestima y la presión social.
+</div>
+</div>
 
-<div class="card"><h3>6 😒 Jealousy, Jealousy</h3><button onclick="abrir(this)">Ver más</button><div class="extra">Muy icónica.</div></div>
+<div class="card">
+<h3>6 😒 Jealousy, Jealousy</h3>
+<button onclick="abrir(this)">Ver más</button>
+<div class="extra">
+Una canción que trata sobre las comparaciones en redes sociales.
+</div>
+</div>
 
-<div class="card"><h3>7 🚗 Deja Vu</h3><button onclick="abrir(this)">Ver más</button><div class="extra">Muy conocida.</div></div>
+<div class="card">
+<h3>7 🚗 Deja Vu</h3>
+<button onclick="abrir(this)">Ver más</button>
+<div class="extra">
+Uno de los mayores éxitos de Olivia Rodrigo.
+</div>
+</div>
 
-<div class="card"><h3>8 💔 Traitor</h3><button onclick="abrir(this)">Ver más</button><div class="extra">Emocional.</div></div>
+<div class="card">
+<h3>8 💔 Traitor</h3>
+<button onclick="abrir(this)">Ver más</button>
+<div class="extra">
+Una balada muy emotiva y querida por los fans.
+</div>
+</div>
 
-<div class="card"><h3>9 🎼 Favourite Crime</h3><button onclick="abrir(this)">Ver más</button><div class="extra">Una favorita.</div></div>
+<div class="card">
+<h3>9 🎼 Favourite Crime</h3>
+<button onclick="abrir(this)">Ver más</button>
+<div class="extra">
+Una canción triste y preciosa del álbum SOUR.
+</div>
+</div>
 
-<div class="card"><h3>10 ☠️ Drop Dead</h3><button onclick="abrir(this)">Ver más</button><div class="extra">Para cerrar el top.</div></div>
+<div class="card">
+<h3>10 ☠️ Drop Dead</h3>
+<button onclick="abrir(this)">Ver más</button>
+<div class="extra">
+Mi puesto número 10 para completar el ranking.
+</div>
+</div>
 
 </div>
 
 </section>
+```
+```html
+<!-- PÁGINA SOUR -->
 
+<section id="sour" class="pagina">
 
-
-<section id="albums">
-
-<h2>
-💿 ÁLBUMES
-</h2>
-
-<div class="grid">
+<h2>💜 ÁLBUM SOUR 💜</h2>
 
 <div class="card">
 
 <img src="https://upload.wikimedia.org/wikipedia/en/b/b2/Olivia_Rodrigo_-_SOUR.png">
 
-<h3>💜 SOUR</h3>
+<h3>SOUR (2021)</h3>
 
 <p>
 
-drivers license • deja vu • brutal • traitor • favourite crime
+SOUR fue el álbum debut de Olivia Rodrigo.
+
+Se lanzó en 2021 y la convirtió en una estrella mundial.
+
+Incluye canciones muy famosas como Drivers License, Deja Vu, Brutal y Traitor.
+
+Su estilo mezcla pop, rock alternativo y baladas emocionales.
 
 </p>
 
 </div>
 
+<div class="grid">
+
+<div class="card">
+<h3>🚗 Deja Vu</h3>
+<p>Uno de los mayores éxitos de Olivia.</p>
+</div>
+
+<div class="card">
+<h3>💔 Traitor</h3>
+<p>Una balada muy emotiva.</p>
+</div>
+
+<div class="card">
+<h3>⚡ Brutal</h3>
+<p>Llena de energía y actitud.</p>
+</div>
+
+<div class="card">
+<h3>😒 Jealousy, Jealousy</h3>
+<p>Habla de las comparaciones en redes sociales.</p>
+</div>
+
+<div class="card">
+<h3>🎼 Favourite Crime</h3>
+<p>Una de las favoritas de muchos fans.</p>
+</div>
+
+</div>
+
+<br>
+
+<a href="#inicio">
+<button>🏠 Volver al inicio</button>
+</a>
+
+</section>
+
+
+
+<!-- PÁGINA GUTS -->
+
+<section id="guts" class="pagina">
+
+<h2>⭐ ÁLBUM GUTS ⭐</h2>
 
 <div class="card">
 
 <img src="https://upload.wikimedia.org/wikipedia/en/5/5c/Olivia_Rodrigo_-_Guts.png">
 
-<h3>⭐ GUTS</h3>
+<h3>GUTS (2023)</h3>
 
 <p>
 
-vampire • pretty isn't pretty • ballad of a homeschooled girl
+GUTS es el segundo álbum de Olivia Rodrigo.
+
+Tiene un sonido más rockero y maduro que SOUR.
+
+Fue un enorme éxito mundial y contiene varias de mis canciones favoritas.
 
 </p>
 
 </div>
-
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7">
-
-<h3>
-🌙 You Seem Pretty Sad For A Girl So In Love
-</h3>
-
-<p>
-
-Tu era especial morada ✨
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<section id="olivia">
-
-<h2>
-🎤 SOBRE OLIVIA
-</h2>
 
 <div class="grid">
 
 <div class="card">
-
-<img src="images.jpeg">
-
-<h3>
-Olivia Rodrigo
-</h3>
-
-<p>
-
-Cantante y compositora.
-
-Álbumes:
-SOUR y GUTS.
-
-Estilo:
-morado, estrellas y pop.
-
-</p>
-
+<h3>🩸 Vampire</h3>
+<p>Mi canción favorita de Olivia Rodrigo.</p>
 </div>
-
 
 <div class="card">
+<h3>📚 Ballad of a Homeschooled Girl</h3>
+<p>Divertida y muy diferente.</p>
+</div>
 
-<h3>
-🏆 CURIOSIDADES
-</h3>
+<div class="card">
+<h3>💜 Pretty Isn't Pretty</h3>
+<p>Habla de autoestima y presión social.</p>
+</div>
 
-<p>
+<div class="card">
+<h3>🤔 Bad Idea Right?</h3>
+<p>Una de las canciones más populares del álbum.</p>
+</div>
 
-✨ Premios Grammy
-
-✨ Actriz
-
-✨ Millones de oyentes
-
-</p>
-
+<div class="card">
+<h3>🎸 Get Him Back!</h3>
+<p>Una mezcla de amor, humor y venganza.</p>
 </div>
 
 </div>
+
+<br>
+
+<a href="#inicio">
+<button>🏠 Volver al inicio</button>
+</a>
 
 </section>
+```
 
-</main>
-
-
-<footer>
-
-Sofía Olmo Osuna — 2º ESO
-
-</footer>
-
-
-<script>
-
-function abrir(b){
-
-let x=b.nextElementSibling;
-
-if(x.style.display==="block"){
-
-x.style.display="none";
-
-b.textContent="Ver más";
-
-}
-
-else{
-
-x.style.display="block";
-
-b.textContent="Ocultar";
-
-}
-
-}
-
-</script>
-
-</body>
-
-</html>
+<main>
 ```
