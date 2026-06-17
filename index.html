@@ -18,7 +18,17 @@ box-sizing:border-box;
 font-family:Verdana,sans-serif;
 scroll-behavior:smooth;
 }
+<script>
+function abrir(btn){
+    const extra = btn.nextElementSibling;
 
+    if(extra.style.display === "block"){
+        extra.style.display = "none";
+    } else {
+        extra.style.display = "block";
+    }
+}
+</script>
 body{
 background:linear-gradient(180deg,#d8b0ff,#a145ff,#6b1fc0,#240033);
 color:white;
@@ -502,3 +512,5 @@ Su música suele hablar de amor, desamor, inseguridad y crecimiento personal, co
 </a>
 
 </section>
+  </body>
+</main>
