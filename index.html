@@ -8,6 +8,7 @@
 
 <style>
 
+/* RESET */
 *{
 margin:0;
 padding:0;
@@ -22,7 +23,7 @@ color:white;
 overflow-x:hidden;
 }
 
-/* brillo fondo */
+/* fondo estrellas */
 body::before{
 content:"";
 position:fixed;
@@ -39,6 +40,7 @@ from{filter:brightness(1);}
 to{filter:brightness(1.6);}
 }
 
+/* HEADER */
 header{
 padding:60px;
 text-align:center;
@@ -56,6 +58,7 @@ text-shadow:0 0 20px white,0 0 50px violet;
 
 .sub{margin-top:10px;color:#eee;}
 
+/* NAV */
 nav{
 position:sticky;
 top:0;
@@ -85,12 +88,23 @@ background:silver;
 color:#6611aa;
 }
 
+/* MAIN */
 main{
 max-width:1400px;
 margin:auto;
 padding:40px;
 }
 
+/* SECCIONES */
+section{
+display:none;
+}
+
+section.active{
+display:block;
+}
+
+/* TITULOS */
 h2{
 text-align:center;
 margin:50px;
@@ -98,12 +112,14 @@ color:silver;
 font-size:2rem;
 }
 
+/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:25px;
 }
 
+/* CARDS */
 .card{
 background:rgba(255,255,255,.12);
 padding:25px;
@@ -125,6 +141,7 @@ border-radius:20px;
 margin-bottom:15px;
 }
 
+/* BOTÓN */
 button{
 width:100%;
 padding:12px;
@@ -137,26 +154,13 @@ background:linear-gradient(90deg,silver,white);
 color:#6c12af;
 }
 
+/* EXTRA INFO */
 .extra{
 display:none;
 margin-top:15px;
 padding:15px;
 border-radius:15px;
 background:rgba(255,255,255,.08);
-}
-
-.pagina{
-display:none;
-padding-top:20px;
-}
-
-.pagina:target{
-display:block;
-}
-
-/* inicio visible */
-#inicio{
-display:block;
 }
 
 </style>
@@ -172,134 +176,128 @@ display:block;
 
 <nav>
 <ul>
-<li><a href="#inicio">Inicio</a></li>
-<li><a href="#sour">SOUR</a></li>
-<li><a href="#guts">GUTS</a></li>
-<li><a href="#sad">You Seem Pretty Sad...</a></li>
-<li><a href="#olivia">Olivia</a></li>
+<li><a href="#" onclick="show('inicio')">Inicio</a></li>
+<li><a href="#" onclick="show('sour')">SOUR</a></li>
+<li><a href="#" onclick="show('guts')">GUTS</a></li>
+<li><a href="#" onclick="show('sad')">Sad</a></li>
+<li><a href="#" onclick="show('olivia')">Olivia</a></li>
 </ul>
 </nav>
 
 <main>
 
 <!-- INICIO -->
-<section id="inicio">
+<section id="inicio" class="active">
 
-<h2>⭐ MI TOP 10 DE CANCIONES ⭐</h2>
+<h2>⭐ MI TOP 10 ⭐</h2>
 
 <div class="grid">
 
 <div class="card">
-<h3>1 🩸 Vampire</h3>
-<button onclick="abrir(this)">Ver más</button>
+<h3>1 Vampire</h3>
+<button onclick="toggle(this)">Ver más</button>
 <div class="extra">Mi favorita de GUTS.</div>
 </div>
 
 <div class="card">
-<h3>2 ⚡ Brutal</h3>
-<button onclick="abrir(this)">Ver más</button>
-<div class="extra">Energía pura de SOUR.</div>
+<h3>2 Brutal</h3>
+<button onclick="toggle(this)">Ver más</button>
+<div class="extra">Energía pura.</div>
 </div>
 
 <div class="card">
-<h3>3 📚 Ballad of a Homeschooled Girl</h3>
-<button onclick="abrir(this)">Ver más</button>
-<div class="extra">Muy divertida y caótica.</div>
+<h3>3 Ballad of a Homeschooled Girl</h3>
+<button onclick="toggle(this)">Ver más</button>
+<div class="extra">Caótica y divertida.</div>
 </div>
 
 <div class="card">
-<h3>4 ✨ The Cure</h3>
-<button onclick="abrir(this)">Ver más</button>
-<div class="extra">Una de tus favoritas.</div>
+<h3>4 The Cure</h3>
+<button onclick="toggle(this)">Ver más</button>
+<div class="extra">Muy emotiva.</div>
 </div>
 
 <div class="card">
-<h3>5 💜 Pretty Isn't Pretty</h3>
-<button onclick="abrir(this)">Ver más</button>
-<div class="extra">Autoestima y presión social.</div>
-</div>
-
-<div class="card">
-<h3>6 😒 Jealousy, Jealousy</h3>
-<button onclick="abrir(this)">Ver más</button>
+<h3>5 Jealousy, Jealousy</h3>
+<button onclick="toggle(this)">Ver más</button>
 <div class="extra">Comparaciones en redes.</div>
-</div>
-
-<div class="card">
-<h3>7 🚗 Deja Vu</h3>
-<button onclick="abrir(this)">Ver más</button>
-<div class="extra">Uno de sus grandes éxitos.</div>
-</div>
-
-<div class="card">
-<h3>8 💔 Traitor</h3>
-<button onclick="abrir(this)">Ver más</button>
-<div class="extra">Muy emocional.</div>
-</div>
-
-<div class="card">
-<h3>9 🎼 Favourite Crime</h3>
-<button onclick="abrir(this)">Ver más</button>
-<div class="extra">Triste y bonita.</div>
-</div>
-
-<div class="card">
-<h3>10 ☠️ Drop Dead</h3>
-<button onclick="abrir(this)">Ver más</button>
-<div class="extra">Cierre del ranking.</div>
 </div>
 
 </div>
 </section>
 
 <!-- SOUR -->
-<section id="sour" class="pagina">
-<h2>💜 ÁLBUM SOUR</h2>
+<section id="sour">
+
+<h2>💜 SOUR</h2>
+
 <div class="card">
 <img src="https://upload.wikimedia.org/wikipedia/en/b/b2/Olivia_Rodrigo_-_SOUR.png">
-<p>Álbum debut de Olivia Rodrigo (2021).</p>
+<p>Álbum debut de Olivia Rodrigo.</p>
 </div>
+
 </section>
 
 <!-- GUTS -->
-<section id="guts" class="pagina">
-<h2>⭐ ÁLBUM GUTS</h2>
+<section id="guts">
+
+<h2>⭐ GUTS</h2>
+
 <div class="card">
 <img src="https://upload.wikimedia.org/wikipedia/en/5/5c/Olivia_Rodrigo_-_Guts.png">
-<p>Segundo álbum (2023), más rockero y maduro.</p>
+<p>Álbum más rockero y maduro.</p>
 </div>
+
 </section>
 
 <!-- SAD -->
-<section id="sad" class="pagina">
+<section id="sad">
+
 <h2>😔 YOU SEEM PRETTY SAD...</h2>
+
 <div class="card">
-<p>Sección extra para curiosidades o contenido.</p>
+<p>Aquí puedes poner curiosidades o contenido extra 💜</p>
 </div>
+
 </section>
 
 <!-- OLIVIA -->
-<section id="olivia" class="pagina">
+<section id="olivia">
+
 <h2>💜 OLIVIA RODRIGO</h2>
 
 <div class="card">
+
 <img src="https://media.glamour.es/photos/6759b35716523cfda65000c3/16:9/w_1920,c_limit/sipausa_57172903.jpg">
 
 <p>
-Olivia Rodrigo es cantante y actriz. Empezó en Disney y se hizo mundialmente famosa con Drivers License.
-Luego lanzó SOUR y GUTS, convirtiéndose en una de las artistas más importantes de su generación.
+Olivia Rodrigo es cantante y actriz. Empezó en Disney y se hizo famosa mundialmente con Drivers License.
+Después lanzó SOUR y GUTS, convirtiéndose en una de las artistas más importantes de su generación.
 </p>
 
 </div>
+
 </section>
 
 </main>
 
 <script>
-function abrir(btn){
-const extra = btn.nextElementSibling;
+
+/* cambiar secciones */
+function show(id){
+
+let sections = document.querySelectorAll("section");
+sections.forEach(s => s.classList.remove("active"));
+
+document.getElementById(id).classList.add("active");
+}
+
+/* mostrar info canciones */
+function toggle(btn){
+let extra = btn.nextElementSibling;
 extra.style.display = extra.style.display === "block" ? "none" : "block";
 }
+
 </script>
 
 </body>
